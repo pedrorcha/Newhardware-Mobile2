@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText username;
     EditText password;
-    Button loginButton;
+    Button loginButton; 
     TextView signupText;
 
     @Override
@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         loginButton = findViewById(R.id.loginButton);
         signupText = findViewById(R.id.signupText);
+        recoverPassword = findViewById(R.id.recoverPassword);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,5 +48,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
     }
 }
