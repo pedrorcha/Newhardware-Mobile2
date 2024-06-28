@@ -14,8 +14,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText username;
     EditText password;
-    Button loginButton; 
+    Button loginButton;
     TextView signupText;
+    TextView recoverPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 if (username.getText().toString().equals("user") && password.getText().toString().equals("1234")) {
                     Toast.makeText(MainActivity.this, "Login Successful!", Toast.LENGTH_SHORT).show();
+
                 } else {
                     Toast.makeText(MainActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
                 }
@@ -45,6 +47,15 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Abrir a tela de cadastro (SignUpActivity)
                 Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        recoverPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Abrir a tela de recuperação de senha (RecoverPasswordActivity)
+                Intent intent = new Intent(MainActivity.this, RecoverPasswordActivity.class);
                 startActivity(intent);
             }
         });
